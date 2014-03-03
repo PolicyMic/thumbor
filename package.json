@@ -1,13 +1,19 @@
 {
 	"name": "thumbor",
 	"version": "0.1.0",
-	"dependencies": {
-		"crypto": "0.0.3"
+	"main": "index.js",
+	"repository": {
+	  "type": "git",
+	  "url": "https://github.com/policymic/thumbor.git"
 	},
 	"author": {
 		"name": "PolicyMic",
 		"url" : "http://policymic.com"
 	},
 	"readme": "Client Thumbor for Node JS",
-	"readmeFilename": "README.md"
+	"readmeFilename": "README.md",
+	"license": "MIT",
+	"dependencies": {
+		"crypto": "0.0.3"
+	}
 }
