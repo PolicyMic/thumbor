@@ -238,14 +238,13 @@ ThumborUrlBuilder.prototype = {
    * @return {[type]}
    */
   crop: function(left, top, right, bottom) {
-    if (left > 0 && top > 0 && right > 0 && bottom > 0) {
-      this.cropValues = {
-        left: left,
-        top: top,
-        right: right,
-        bottom: bottom
-      };
-    }
+    this.cropValues = {
+      left: left,
+      top: top,
+      right: right,
+      bottom: bottom
+    };
+
     return this;
   },
   /**
