@@ -2,6 +2,12 @@
 
 Thumbor client for Node JS
 
+Combination of
+- https://github.com/dcaramelo/ThumborUrlBuilder crypt implementation
+- https://github.com/rafaelcaricio/ThumborJS build command set
+
+Neither of these repos are updating anymore so we are maintaining our own
+
 ## Usage
 
 ```sh
