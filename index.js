@@ -4,7 +4,7 @@ var crypto = require('crypto');
  * @param {[type]} securityKey
  * @param {[type]} thumborServerUrl
  */
-function ThumborUrlBuilder(securityKey, thumborServerUrl) {
+function Thumbor(securityKey, thumborServerUrl) {
   'use strict';
 
   this.THUMBOR_SECURITY_KEY = securityKey;
@@ -24,7 +24,7 @@ function ThumborUrlBuilder(securityKey, thumborServerUrl) {
   this.filtersCalls = [];
 }
 
-ThumborUrlBuilder.prototype = {
+Thumbor.prototype = {
 
   TOP: 'top',
   MIDDLE: 'middle',
@@ -252,9 +252,7 @@ ThumborUrlBuilder.prototype = {
    * @return {String}
    */
   buildUrl: function() {
-
     var operation = this.getOperationPath();
-
 
     if (this.THUMBOR_SECURITY_KEY) {
 
@@ -276,4 +274,4 @@ ThumborUrlBuilder.prototype = {
   }
 };
 
-module.exports = ThumborUrlBuilder;
+module.exports = Thumbor;
