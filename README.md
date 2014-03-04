@@ -11,9 +11,9 @@ Neither of these repos are updating anymore so we are maintaining our own
 ## Usage
 
 ```sh
-# Install thumbor-url-builder module
+# Install thumbor module
 
-npm install thumbor-url-builder
+npm install thumbor
 ```
 
 ```javascript
