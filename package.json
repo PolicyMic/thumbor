@@ -12,8 +12,5 @@
 	},
 	"readme": "Client Thumbor for Node JS",
 	"readmeFilename": "README.md",
-	"license": "MIT",
-	"dependencies": {
-		"crypto": "0.0.3"
-	}
+	"license": "MIT"
 }
