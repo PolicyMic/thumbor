@@ -184,7 +184,6 @@ Thumbor.prototype = {
    * @param  {String} halign 'left', 'center', 'right'
    */
   halign: function(halign) {
-    console.log('halign: ', halign);
     if (
       halign === this.LEFT ||
       halign === this.RIGHT ||
