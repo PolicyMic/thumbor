@@ -145,6 +145,7 @@ Thumbor.prototype = {
   resize: function(width, height) {
     this.width = width;
     this.height = height;
+    this.fitInFlag = false;
     return this;
   },
 
