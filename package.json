@@ -1,16 +1,16 @@
 {
-	"name": "thumbor",
-	"version": "0.1.2",
-	"main": "index.js",
-	"repository": {
-	  "type": "git",
-	  "url": "https://github.com/policymic/thumbor.git"
-	},
-	"author": {
-		"name": "PolicyMic",
-		"url" : "http://policymic.com"
-	},
-	"readme": "Client Thumbor for Node JS",
-	"readmeFilename": "README.md",
-	"license": "MIT"
+  "name": "thumbor",
+  "version": "0.1.4",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/policymic/thumbor.git"
+  },
+  "author": {
+    "name": "PolicyMic",
+    "url": "http://policymic.com"
+  },
+  "readme": "Client Thumbor for Node JS",
+  "readmeFilename": "README.md",
+  "license": "MIT"
 }
