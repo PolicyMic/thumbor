@@ -143,8 +143,8 @@ Thumbor.prototype = {
    * @param  {String} height
    */
   resize: function(width, height) {
-    this.width = width;
-    this.height = height;
+    this.width = width || '';
+    this.height = height || '';
     return this;
   },
 
@@ -160,8 +160,8 @@ Thumbor.prototype = {
    * @param  {String} height
    */
   fitIn: function(width, height) {
-    this.width = width;
-    this.height = height;
+    this.width = width || '';
+    this.height = height || '';
     this.fitInFlag = true;
     return this;
   },
@@ -225,7 +225,9 @@ Thumbor.prototype = {
    * @param  {String} filterCall
    */
   filter: function(filterCall) {
-    this.filtersCalls.push(filterCall);
+    if(this.filtersCalls.indexOf(filterCall) == -1) {
+        this.filtersCalls.push(filterCall);
+    }
     return this;
   },
   /**
