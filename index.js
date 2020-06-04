@@ -21,6 +21,7 @@ function Thumbor(securityKey, thumborServerUrl) {
   this.valignValue = null;
   this.cropValues = null;
   this.meta = false;
+  this.trimValue = null;
   this.filtersCalls = [];
 }
 
@@ -33,6 +34,9 @@ Thumbor.prototype = {
   RIGHT: 'right',
   CENTER: 'center',
   LEFT: 'left',
+
+  TOP_LEFT: 'top-left',
+  BOTTOM_RIGHT: 'bottom-right',
 
   /**
    * Set path of image
@@ -73,6 +77,10 @@ Thumbor.prototype = {
 
     if (this.meta) {
       parts.push('meta');
+    }
+
+    if (this.trimValue) {
+      parts.push(this.trimValue);
     }
 
     if (this.cropValues) {
@@ -129,6 +137,34 @@ Thumbor.prototype = {
     }
 
     return parts;
+  },
+  /**
+   * Removes surrounding space in images using top-left pixel color unless specified otherwise.
+   * Overrides any previous call to `trim`.
+   * @param {String} orientation 'top-left', 'bottom-right'
+   * @param {Integer} tolerance between 0 and 442
+   */
+  trim: function(orientation, tolerance) {
+    var trimOpts = ['trim'];
+
+    if (orientation !== undefined) {
+      if (orientation === this.TOP_LEFT || orientation === this.BOTTOM_RIGHT) {
+        trimOpts.push(orientation);
+      } else {
+        throw new Error('Orientation must be top-left or bottom-right.');
+      }
+    }
+
+    if (tolerance !== undefined) {
+      if (tolerance > 0 && tolerance < 442) {
+        trimOpts.push(tolerance);
+      } else {
+        throw new Error('Tolerance must be between 0 and 442.');
+      }
+    }
+
+    this.trimValue = trimOpts.join(':');
+    return this;
   },
   /**
    * Resize the image to the specified dimensions. Overrides any previous call
