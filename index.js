@@ -1,4 +1,5 @@
-var crypto = require('crypto');
+var hmacSha1 = require('crypto-js/hmac-sha1');
+var base64 = require('crypto-js/enc-base64');
 
 /**
  * @param {[type]} securityKey
@@ -256,10 +257,9 @@ Thumbor.prototype = {
 
     if (this.THUMBOR_SECURITY_KEY) {
 
-      var key = crypto
-        .createHmac('sha1', this.THUMBOR_SECURITY_KEY)
-        .update(operation + this.imagePath)
-        .digest('base64');
+      var key = base64.stringify(
+        hmacSha1(operation + this.imagePath, this.THUMBOR_SECURITY_KEY)
+      )
 
       key = key.replace(/\+/g, '-').replace(/\//g, '_');
 
